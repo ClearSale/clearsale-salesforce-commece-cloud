@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="ClearSale_Production">
+        <url>https://integration.clearsale.com.br</url>
+        <user-id/>
+        <password/>
+    </service-credential>
+
+    <service-credential service-credential-id="ClearSale_Sandbox">
+        <url>https://sandbox.clearsale.com.br</url>
+        <user-id/>
+        <password/>
+    </service-credential>
+
+    <service-profile service-profile-id="ClearSale_Profile">
+        <timeout-millis>10000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service service-id="int_clearsale.http.orders.ClearSale.SiteGenesis">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>clearsale</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>ClearSale_Profile</profile-id>
+        <credential-id>ClearSale_Sandbox</credential-id>
+    </service>
+
+</services>
